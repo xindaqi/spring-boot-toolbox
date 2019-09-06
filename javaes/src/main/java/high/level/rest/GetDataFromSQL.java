@@ -1,7 +1,7 @@
 package high.level.rest;
 
 import java.net.InetSocketAddress;
-import java.util.List;
+import java.util.*;
 
 import com.alibaba.otter.canal.client.CanalConnectors;
 import com.alibaba.otter.canal.client.CanalConnector;
@@ -91,9 +91,23 @@ public class GetDataFromSQL {
     }
 
     private static void printColumn(List<Column> columns) {
+        HighAPITestV1 esOperation = new HighAPITestV1();
+        System.out.println("List datas: "+columns);
+        List<String> listData = new ArrayList<>();
+
+
+
         for (Column column : columns) {
-            System.out.println(column.getName() + " : " + column.getValue() + "    update=" + column.getUpdated());
+            listData.add(column.getValue());
+//            esOperation.insertData(column.getValue());
+//            System.out.println("datas:"+column);
+//            System.out.println(column.getName()+":"+column.getValue());
+//            System.out.println(column.getName() + " : " + column.getValue() + "    update=" + column.getUpdated());
         }
+        esOperation.insertData(listData.get(0), listData.get(1), listData.get(2));
+        System.out.println("Extract datas: "+listData);
+        String id = listData.get(0);
+        System.out.println("id:"+id);
     }
 
 }

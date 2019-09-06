@@ -112,14 +112,16 @@ public class HighAPITestV1 {
 
     }
 
-    public String insertData(){
+    public String insertData(String data_id, String name, String address){
         try(RestHighLevelClient client = InitDemo.getClient()){
 //            IndexRequest request = new IndexRequest("twitter", "info", "1");
             Map<String, Object> jsonMap = new HashMap<>();
             String insertStatus="test";
-            jsonMap.put("name", "小三三");
-            jsonMap.put("address", "沈阳");
-            IndexRequest request = new IndexRequest("twitter", "info", "3")
+//            jsonMap.put("name", "小三三");
+//            jsonMap.put("address", "沈阳");
+            jsonMap.put("name", name);
+            jsonMap.put("address", address);
+            IndexRequest request = new IndexRequest("twitter", "info", data_id)
                                                 .source(jsonMap);
 
             IndexResponse indexResponse = client.index(request);
@@ -290,7 +292,7 @@ public class HighAPITestV1 {
 ////        System.out.println("Del index status: "+ delIndexStatus);
 ////        // insert data
 ////        String insertStatus;
-////        insertStatus = indexOperations.insertData();
+////        insertStatus = indexOperations.insertData("小小","天津", "10");
 ////        System.out.println("Insert data status: "+insertStatus);
 //
 ////        // update data
