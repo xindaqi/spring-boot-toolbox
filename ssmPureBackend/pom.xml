@@ -196,6 +196,8 @@
         <version>${spring.framework.version}</version>
         <scope>compile</scope>
     </dependency>
+
+    
     
 
 
@@ -267,6 +269,11 @@
         <artifactId>javassist</artifactId>
         <version>3.18.2-GA</version>
         <scope>runtime</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jms</artifactId>
+        <version>${spring.framework.version}</version>
     </dependency>
 
     <dependency>
@@ -376,7 +383,7 @@
     </dependency>
 
     <!-- RabbitMQ -->
-    <dependency>
+    <!-- <dependency>
         <groupId>com.rabbitmq</groupId>
         <artifactId>amqp-client</artifactId>
         <version>4.2.0</version>
@@ -384,8 +391,48 @@
     <dependency>
         <groupId>org.springframework.amqp</groupId>
         <artifactId>spring-rabbit</artifactId>
-        <version>1.4.5.REALEASE</version>
+        <version>1.4.5.RELEASE</version>
+    </dependency> -->
+
+    <!-- kafka -->
+    <dependency>
+        <groupId>org.apache.kafka</groupId>
+        <artifactId>kafka-clients</artifactId>
+        <version>1.0.1</version>
     </dependency>
+    <dependency>
+        <groupId>org.apache.kafka</groupId>
+        <artifactId>kafka_2.11</artifactId>
+        <version>0.8.2.1</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.kafka</groupId>
+        <artifactId>spring-kafka</artifactId>
+        <version>1.1.1.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.framework.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-tx</artifactId>
+        <version>${spring.framework.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jms</artifactId>
+        <version>${spring.framework.version}</version>
+    </dependency>
+
+    <!-- dubbo -->
+    <!-- <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>dubbo</artifactId>
+        <version>2.5.3</version>
+    </dependency> -->
+
     
   </dependencies>
   <build>

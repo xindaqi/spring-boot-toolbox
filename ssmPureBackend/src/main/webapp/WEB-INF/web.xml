@@ -10,9 +10,11 @@
   		<!-- 加载src目录下的applicationContext.xml文件 -->
   		<param-name>contextConfigLocation</param-name>
   		<param-value>
-  			classpath:config/applicationContext.xml
+			  classpath*:config/applicationContext.xml,
+			  classpath*:config/kafkaBeans.xml
   		</param-value>
-  	</context-param>
+	  </context-param>
+	  <!-- classpath:config/kafka-beans.xml -->
   	<!-- 指定以ContextLoaderListener方式启动Spring容器 -->
   	<listener>
   		<listener-class>
@@ -26,7 +28,13 @@
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath:config/ssmPureBackend-servlet.xml</param-value>
-    </init-param>
+	</init-param>
+	<init-param>
+		<param-name>contextConfigLoacation</param-name>
+		<param-value>classpath:config/kafkaBeans.xml</param-value>
+	</init-param>
+
+	
 		<load-on-startup>1</load-on-startup>
 		<async-supported>true</async-supported>
 	</servlet>
