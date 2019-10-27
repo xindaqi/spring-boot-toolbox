@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.anotherdatasource.dao.AlarmComputerRoomDao">
+  
+  <select id="selectAlarmComputerRoomById" resultType="com.anotherdatasource.po.AlarmComputerRoom" parameterType="Integer">
+    select * from alarm_computer_room where id=#{id}
+  </select>
+
+  <insert id="addAlarmComputerRoomInfos" parameterType="map">
+      insert into alarm_computer_room(Summary, Alarm_sys, Alarm_des, Alarm_id,Alarm_level, 
+      Alarm_begin, Alarm_end, Alarm_source, Alarm_projectCode,Alarm_projectName, 
+      Alarm_areaName, Alarm_deviceName, Alarm_pointName, Alarm_deviceId, Alarm_pointID,
+      Alarm_pointValue, Alarm_condition) 
+      values (#{Summary}, #{Alarm_sys}, #{Alarm_des}, #{Alarm_id}, #{Alarm_level},
+      #{Alarm_begin}, #{Alarm_end}, #{Alarm_source}, #{Alarm_projectCode}, #{Alarm_projectName},
+      #{Alarm_areaName}, #{Alarm_deviceName}, #{Alarm_pointName}, #{Alarm_deviceId}, #{Alarm_pointID},
+      #{Alarm_pointValue}, #{Alarm_condition})
+  </insert>
+
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <package name="com.datasource.po"/>
+        <package name="com.anothersource.po"/>
+        <!-- <typeAlias alias="DeivceStatus" type="com.anotherdatasource.po.DeviceStatus"/> -->
+        <!-- <typeAlias alias="Auser" type="com.datasource.po.Auser"/>
+        <typeAlias alias="Goods" type="com.datasource.po.Goods"/>
+        <typeAlias alias="GoodsType" type="com.datasource.po.GoodsType"/>
+        <typeAlias alias="Notice" type="com.datasource.po.Notice"/>
+        <typeAlias alias="Buser" type="com.datasource.po.Buser"/>
+        <typeAlias alias="Order" type="com.datasource.po.Order"/> -->
+        
+     </typeAliases>
+	 <mappers>
+        <mapper resource="com/datasource/mybatis/admin/AdminGoodsMapper.xml"/>
+        <mapper resource="com/datasource/mybatis/admin/AdminMapper.xml"/>
+        <mapper resource="com/datasource/mybatis/admin/AdminTypeMapper.xml"/>
+        <mapper resource="com/datasource/mybatis/admin/AdminNoticeMapper.xml"/>
+        <mapper resource="com/datasource/mybatis/admin/AdminUserMapper.xml"/>
+       	<mapper resource="com/datasource/mybatis/admin/AdminOrderMapper.xml"/>
+        <mapper resource="com/datasource/mybatis/before/IndexMapper.xml"/>
+        <mapper resource="com/datasource/mybatis/before/UserMapper.xml"/>
+        <mapper resource="com/datasource/mybatis/before/CartMapper.xml"/>
+       	<mapper resource="com/datasource/mybatis/before/OrderMapper.xml"/>
+        <mapper resource="com/datasource/mybatis/before/UserCenterMapper.xml"/>
+        <mapper resource="com/anotherdatasource/mybatis/bigdata/DeviceStatusMapper.xml"/>
+        <mapper resource="com/anotherdatasource/mybatis/bigdata/AlarmComputerRoomMapper.xml"/>
+           
+ 	</mappers>
+</configuration>
+
