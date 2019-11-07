@@ -1,0 +1,15 @@
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/po/PeopleInfos.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/config/MsgSocketHandle.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/controller/MsgController.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/config/WebSocketConfig.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/config/WSSTOMPConfig.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/service/PeopleInfosService.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/controller/PeopleInfosController.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/po/Message.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/po/Chat.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/controller/CommunicationController.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/service/impl/PeopleInfosServiceImpl.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/po/People.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/mapper/PeopleInfosMapper.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/SbUsageApplication.java
+/home/xdq/xinPrj/java/javaWebTest/pureBackendSB/sbUsage/src/main/java/com/sb/config/WebSocketHandshakeInterceptor.java
