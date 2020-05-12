@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: dev
+
+mybatis:
+  config-location: classpath:/config/mybatis-config.xml
+
+logging:
+  config: classpath:config/logback.xml

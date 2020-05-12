@@ -1,0 +1,6 @@
+/home/xdq/xinPrj/java/javaWebTest/base-framework/src/main/java/com/company/web/controller/TokenByRedisController.java
+/home/xdq/xinPrj/java/javaWebTest/base-framework/src/main/java/com/company/web/config/WebSecurityConfig.java
+/home/xdq/xinPrj/java/javaWebTest/base-framework/src/main/java/com/company/web/InitiApplication.java
+/home/xdq/xinPrj/java/javaWebTest/base-framework/src/main/java/com/company/web/controller/ExchangeData.java
+/home/xdq/xinPrj/java/javaWebTest/base-framework/src/main/java/com/company/web/config/AuthorizationServerConfig.java
+/home/xdq/xinPrj/java/javaWebTest/base-framework/src/main/java/com/company/web/config/ResourceServerConfig.java
