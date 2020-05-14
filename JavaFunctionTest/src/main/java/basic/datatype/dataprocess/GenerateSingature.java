@@ -24,9 +24,9 @@ public class GenerateSingature {
 
     public static void main(String[] args){
         String header = "POST\n*/*\napplication/json\n";
-        String appKey = "x-ca-key:20769288\n";
-        String url = "/artemis/api/cfas/v2/passengerFlow/allGroup";
-        String appSecret = "LaOWdgn64UQCzZhuIaUo";
+        String appKey = "x-ca-key:xxxxxx\n";
+        String url = "xxxxx";
+        String appSecret = "xxxxxx";
         String signature = GenerateSingature.generateSignatrue(header, appKey, url, appSecret);
         System.out.println("signature:"+signature);
 
