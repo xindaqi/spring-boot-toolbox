@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.web.mapper.AnswersMapper">
+    <resultMap id="answersMap" type="com.company.web.po.Answers">
+        <result property="answers" column="answers"/>
+        <result property="questions" column="questions_fk"/>
+    </resultMap>
+    <insert id="addAnswers" parameterType="map">
+        insert into answers_repository
+        (answers, questions_fk)
+        values
+        (#{answers}, #{questions})
+    </insert>
+    <delete id="deleteAnswers" parameterType="string">
+        delete from answers_repository where answers=#{answers}
+    </delete>
+    <update id="editAnswers" parameterType="map">
+        update answers_repository set answers=#{answersNew} where answers=#{answers}
+    </update>
+    <select id="queryAnswersAll" parameterType="map" resultMap="answersMap">
+        select * from answers_repository ar 
+        <where>
+            <if test="answers !=''">
+                and ar.answers like "%"#{answers}"%"
+            </if>
+        </where>
+    </select>
+    <select id="queryAnswersSingle" parameterType="string" resultMap="answersMap">
+        select * from answers_repository where answers like "%"#{answers}"%"
+    </select>
+</mapper>

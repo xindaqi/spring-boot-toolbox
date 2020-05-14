@@ -142,9 +142,8 @@
       <scope>system</scope>
       <systemPath>${project.basedir}/src/main/resources/jar/*.jar</systemPath>
     </dependency> -->
-
-
   </dependencies>
+  
   <build>
     <finalName>base-framework</finalName>
     <defaultGoal>compile</defaultGoal>
