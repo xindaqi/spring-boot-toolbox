@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Signin Template · Bootstrap</title>
+
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/"> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/assets/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <!-- <link href="/sign-in/signin.css" rel="stylesheet"> -->
+    <link href="/static/css/user-info/userinfo.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class="m-auto">
+      <div class="card">
+        <div class="card-body">
+          <form class="form-user" method="post" th:action="@{/api/page/ui/user/save}" th:object="${userInfo}">
+            <!-- <img class="mb-4" src="/static/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+            <h1 class="h3 mb-3 font-weight-normal">添加用户</h1>
+            <!-- 用户名 -->
+            <label for="username" class="user-info">用户名</label>
+            <!-- <label for="username" class="sr-only">用户名</label> -->
+            <input type="text" th:field="*{username}" class="form-control" placeholder="用户名" required autofocus>
+            <!-- 密码 -->
+            <label for="inputPassword" class="user-info">密码</label>
+            <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required> -->
+            <input type="text" id="inputPassword" th:field="*{password}"class="form-control" placeholder="Password" required>
+            <!-- 邮箱 -->
+            <label for="email" class="user-info">邮箱</label>
+            <input type="text" th:field="*{email}" class="form-control" placeholder="Email address" required autofocus>
+            <!-- <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus> -->
+            <!-- 性别 -->
+            <label for="email" class="user-info">性别</label>
+            <input type="text" th:field="*{sex}" class="form-control" placeholder="Email address" required autofocus>
+            <!-- 职位 -->
+            <label for="email" class="user-info">职位</label>
+            <input type="text" th:field="*{position}" class="form-control" placeholder="Email address" required autofocus>
+            <!-- 手机号码 -->
+            <label for="email" class="user-info">手机号码</label>
+            <input type="text" th:field="*{telephoneNum}" class="form-control" placeholder="Email address" required autofocus>
+            
+            <button class="btn btn-lg btn-primary btn-block" type="submit">保存</button>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+</body>
+</html>

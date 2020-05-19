@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Dashboard Template · Bootstrap</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/static/assets/dist/js/bootstrap.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="/static/js/datasshow/dashboard.js"></script>
+    <script type="text/javascript" src="/static/js/user-info/userinfo.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
+    <!-- Bootstrap core CSS -->
+    <link href="/static/assets/dist/css/bootstrap.css" rel="stylesheet">
+    
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="/static/css/dashboard/dashboard.css" rel="stylesheet">
+    
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="#">Company name</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+  <ul class="navbar-nav px-3">
+    <li class="nav-item text-nowrap">
+      <a class="nav-link" href="#">Sign out</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="sidebar-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="home"></span>
+              Dashboard <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Orders
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              Products
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Customers
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reports
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Integrations
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Saved reports</span>
+          <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Current month
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Last quarter
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Social engagement
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Year-end sale
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        <div class="btn-toolbar mb-2 mb-md-0">
+          <div class="btn-group mr-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+          </div>
+          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+            <span data-feather="calendar"></span>
+            This week
+          </button>
+        </div>
+      </div>
+
+      <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
+
+      <h2>Section title</h2>
+      <div>
+        <!-- <a href="user/add.html" th:href="@{/api/page/ui/user/add}"><button type="button" class="btn btn-primary">添加</button></a> -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">添加</button>
+        <div class="modal fade" id="modalAdd" teabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">添加用户</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- <form class="form-user" method="post" th:action="@{/api/page/ui/user/update}"> -->
+                <!-- <form class="form-user" method="post" th:action="@{/api/page/ui/user/update}" th:object="${i}"> -->
+                  <!-- <h1 class="h3 mb-3 font-weight-normal">修改用户</h1> -->
+                  <!-- <input type="hidden" id="uid"  th:value=${i.id} class="form-control" placeholder="用户名" required autofocus> -->
+                  <!-- <input type="text" id="uid"  th:value=${i.id} class="form-control" placeholder="用户名" required autofocus> -->
+                          
+                  <label for="username" class="user-info">用户名</label>
+                  <input type="text" id="username"  class="form-control" placeholder="用户名" required autofocus>
+                          
+                  <label for="inputPassword" class="user-info">密码</label>
+                  <input type="text" id="password"  class="form-control" placeholder="Password" required>
+                          
+                  <label for="email" class="user-info">邮箱</label>
+                  <input type="text" id="email"  class="form-control" placeholder="Email address" required autofocus>
+                          
+                  <label for="email" class="user-info">性别</label>
+                  <input type="text" id="sex"  class="form-control" placeholder="Email address" required autofocus>
+                          
+                  <label for="email" class="user-info">职位</label>
+                  <input type="text" id="position" class="form-control" placeholder="Email address" required autofocus>
+                          
+                  <label for="email" class="user-info">手机号码</label>
+                  <input type="text" id="telephoneNum"  class="form-control" placeholder="Email address" required autofocus>
+                          
+                <!-- </form> -->
+                        
+              </div>
+              <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                
+                <a href="http://localhost:8090/api/page/datasshow"><button type="submit" class="btn btn-primary" onclick="click_add()" data-dismiss="modal">保存</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="sr-only">用户名</label>
+            <input type="text" id="username-query" class="input-medium" placeholder="用户名" aria-label="..." required autofocus>
+            <button class="btn btn-primary" onclick="click_query()">查询</button>
+          </div>
+      </div>
+      <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>序号</th>
+              <th>id</th>
+              <th>姓名</th>
+              <th>性别</th>
+              <th>岗位</th>
+              <th>电话</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="i,stat:${resultLi}">
+              <td th:text="${stat.count}"></td>
+              <th th:text="${i.id}"></th>
+              <td th:text="${i.username}"></td>
+              <td th:text="${i.sex}"></td>
+              <td th:text="${i.position}"></td>
+              <td th:text="${i.telephoneNum}"></td>
+              <td>
+                
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTest">修改</button>
+                <div class="modal fade" id="modalTest" teabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">修改用户</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- <form class="form-user" method="post" th:action="@{/api/page/ui/user/update}"> -->
+                        <!-- <form class="form-user" method="post" th:action="@{/api/page/ui/user/update}" th:object="${i}"> -->
+                          <!-- <h1 class="h3 mb-3 font-weight-normal">修改用户</h1> -->
+                          <!-- <input type="hidden" id="uid"  th:value=${i.id} class="form-control" placeholder="用户名" required autofocus> -->
+                          <input type="text" id="uid"  th:text=${i.id} class="form-control" placeholder="用户名" required autofocus>
+                          
+                          <label for="username" class="user-info">用户名</label>
+                          <input type="text" id="username" th:value="${i.username}" class="form-control" placeholder="用户名" required autofocus>
+                          
+                          <label for="inputPassword" class="user-info">密码</label>
+                          <input type="text" id="password" th:value="${i.password}" class="form-control" placeholder="Password" required>
+                          
+                          <label for="email" class="user-info">邮箱</label>
+                          <input type="text" id="email" th:value="${i.email}" class="form-control" placeholder="Email address" required autofocus>
+                          
+                          <label for="email" class="user-info">性别</label>
+                          <input type="text" id="sex" th:value="${i.sex}" class="form-control" placeholder="Email address" required autofocus>
+                          
+                          <label for="email" class="user-info">职位</label>
+                          <input type="text" id="position" th:value="${i.position}" class="form-control" placeholder="Email address" required autofocus>
+                          
+                          <label for="email" class="user-info">手机号码</label>
+                          <input type="text" id="telephoneNum" th:value="${i.telephoneNum}" class="form-control" placeholder="Email address" required autofocus>
+                        <!-- </form> -->
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">取消x</button>
+                        <button type="button" class="btn btn-primary" onclick="click_save()" data-dismiss="modal">保存</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- <a href="datasshow/index.html" th:href="@{/api/page/ui/user/edit(id=${i.id})}"><button type="button" class="btn btn-primary">修改</button></a> -->
+                <a href="datasshow/index.html" th:href="@{/api/page/ui/user/delete(id=${i.id})}"><button type="button" class="btn btn-danger">删除</button></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTest">修改</button>
+  <div class="modal fade" id="modalTest" teabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">修改用户</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          测试内容
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary">保存</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>
+</body>
+
+        
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <base href="<%=basePath%>"> -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" th:href="@{/static/css/peopleInfos.css}"/> -->
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>文件上传</title>
+</head>
+<body>
+    <h3>单文件上传</h3>
+    <form method="post" action="/api/ui/single-file-upload" enctype="multipart/form-data">
+        <input type="file" name="fileName"><br>
+        <input type="submit" value="提交">
+    </form>
+    <h3>多文件上传</h3>
+    <form method="post" action="/api/ui/multi-file-upload" enctype="multipart/form-data">
+        <p>选择文件1:<input type="file" name="fileName"/></p>
+        <p>选择文件2:<input type="file" name="fileName"/></p>
+        <p>选择文件3:<input type="file" name="fileName"/></p>
+        <p><input type="submit" value="提交"/></p>
+    </form>
+    <h3>文件下载</h3>
+    <form method="post" action="/api/ui/download-with-filename" enctype="multipart/form-data">
+        <input type="submit" value="下载">
+    </form>
+</body>
+</html>
+
