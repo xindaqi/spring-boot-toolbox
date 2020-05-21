@@ -23,6 +23,8 @@ import org.slf4j.LoggerFactory;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.company.web.service.UserInfosService;
 
 @CrossOrigin(origins="*", maxAge=3600)
@@ -48,7 +50,7 @@ public class PageController {
         UserInfos userInfos = new UserInfos();
         // map.put("userInfo", userInfos);
         model.addAttribute("userInfo", params);
-        System.out.println("email:"+params.getEmail());
+        // System.out.println("email:"+params.getEmail());
         return "sign-in/index";
     }
     @RequestMapping(value="/user/add", method=RequestMethod.POST)
@@ -147,10 +149,10 @@ public class PageController {
 
     @RequestMapping(value="/ui/user/update/eject", method=RequestMethod.POST)
     @ResponseBody
-    public String editSaveEjectUserInfo(@RequestBody Map params){
-        System.out.println("id from modal:"+params.get("id").toString());
-        System.out.println("username from modal:"+params.get("username").toString());
-        // Integer resFlag = userInfosService.editUser(params);
+    public String editSaveEjectUserInfo(@RequestBody UserInfos params){
+        Integer resFlag = userInfosService.editUser(params);
+        System.out.println("uid:"+params.getId());
+        System.out.println("username:"+params.getUsername());
         System.out.println("success update");
         return "success";
     }
@@ -158,21 +160,56 @@ public class PageController {
     @RequestMapping(value="/ui/user/query", method=RequestMethod.GET)
     public ModelAndView dataQuery(@RequestParam("username") String username, ModelMap map){
         // System.out.println("email from sign:"+params.getEmail());
-        ModelAndView mav = new ModelAndView("datasshow/index");
+        Integer pageNum=0,pageSize=5;
+        PageHelper.startPage(pageNum, pageSize);
         map.put("username", username);
         List resFlag = userInfosService.queryUser(map);
-        mav.addObject("resultLi", resFlag);
+        PageInfo pageInfo = new PageInfo(resFlag, pageSize);
+        ModelAndView mav = new ModelAndView("datasshow/index");
+        // mav.addObject("resultLi", resFlag);
+        mav.addObject("resultLi", pageInfo);
+        mav.addObject("total", pageInfo.getTotal());
+        mav.addObject("pageNum", pageInfo.getPageNum());
+        mav.addObject("pageSize", pageInfo.getPageSize());
+        mav.addObject("isFirstPage", pageInfo.isIsFirstPage());
+        mav.addObject("totalPages", pageInfo.getPages());
+        mav.addObject("isLastPage", pageInfo.isIsLastPage());
         return mav;
     }
 
-    @RequestMapping(value="/datasshow", method=RequestMethod.GET)
-    public String datasShow(@ModelAttribute UserInfos params, ModelMap map, Model model){
+    @RequestMapping(value="/datasshow",method=RequestMethod.GET)
+    public String datasShow(@ModelAttribute UserInfos params, ModelMap map, Model model, 
+    @RequestParam(value="pageNum", defaultValue="0")Integer pageNum,
+    @RequestParam(value="pageSize", defaultValue="5") Integer pageSize){
         // System.out.println("email from sign:"+params.getEmail());
         System.out.println("username from sign:"+params.getUsername());
         map.put("username", "");
+        System.out.println("pageSize:"+pageSize);
+        PageHelper.startPage(pageNum, pageSize);
         List resFlag = userInfosService.queryUser(map);
-        model.addAttribute("resultLi", resFlag);
+        PageInfo pageInfo = new PageInfo(resFlag, pageSize);
+        // ModelAndView mav = new ModelAndView("datasshow/index");
+        // ModelAndView mav1 = new ModelAndView("user-info/edit");
+        // mav.addObject("resultLi", pageInfo);
+        // mav.addObject("total", pageInfo.getTotal());
+        // mav.addObject("pageNum", pageInfo.getPageNum());
+        // mav.addObject("pageSize", pageInfo.getPageSize());
+        // System.out.println("pagesize from pagehelper:"+pageInfo.getPageSize());
+        // mav.addObject("isFirstPage", pageInfo.isIsFirstPage());
+        // mav.addObject("totalPages", pageInfo.getPages());
+        // mav.addObject("isLastPage", pageInfo.isIsLastPage());
+        // string url
+        model.addAttribute("resultLi", pageInfo);
+        model.addAttribute("total", pageInfo.getTotal());
+        model.addAttribute("pageNum", pageInfo.getPageNum());
+        model.addAttribute("pageSize", pageInfo.getPageSize());
+        model.addAttribute("isFirstPage", pageInfo.isIsFirstPage());
+        model.addAttribute("totalPages", pageInfo.getPages());
+        model.addAttribute("isLastPage", pageInfo.isIsLastPage());
         return "datasshow/index";
+        
+
+        // return "datasshow/index";
     }
 
 

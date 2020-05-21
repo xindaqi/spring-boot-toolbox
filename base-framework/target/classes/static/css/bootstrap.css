@@ -5036,6 +5036,12 @@ input[type="button"].btn-block {
   background-color: #fff;
   border: 1px solid #dee2e6;
 }
+.page-link.active {
+  z-index: 3;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
 
 .page-link:hover {
   z-index: 2;
