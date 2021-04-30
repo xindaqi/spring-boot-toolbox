@@ -1,6 +1,0 @@
-com/sb/SbUsageApplication.class
-com/sb/service/impl/PeopleInfosServiceImpl.class
-com/sb/po/PeopleInfos.class
-com/sb/controller/PeopleInfosController.class
-com/sb/service/PeopleInfosService.class
-com/sb/mapper/PeopleInfosMapper.class
